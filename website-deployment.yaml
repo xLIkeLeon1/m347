@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+   name: leon-deployment
+
+spec:
+
+   replicas: 1
+
+   selector:
+
+      matchLabels:
+
+         app: leon
+
+   template:
+
+      metadata:
+
+         labels:
+
+            app: leon
+
+      spec:
+
+         containers:
+
+            - name: leon
+
+              image: leongood/m347
+
+              ports:
+
+                 - containerPort: 80
